@@ -3,11 +3,6 @@ package ar.edu.iua.ingweb3.model;
 import java.util.Date;
 
 public class Producto {
-	private int id;
-	private String descripcion;
-	private double precio;
-	private boolean enStock;
-	private Date vencimiento;
 	
 	public Producto() {
 		// TODO Auto-generated constructor stub
@@ -21,6 +16,12 @@ public class Producto {
 		this.enStock = enStock;
 		this.vencimiento = vencimiento;
 	}
+	
+	private int id;
+	private String descripcion;
+	private double precio;
+	private boolean enStock;
+	private Date vencimiento;
 	
 	public int getId() {
 		return id;
@@ -52,5 +53,6 @@ public class Producto {
 	public void setVencimiento(Date vencimiento) {
 		this.vencimiento = vencimiento;
 	}
-
+	
+	
 }

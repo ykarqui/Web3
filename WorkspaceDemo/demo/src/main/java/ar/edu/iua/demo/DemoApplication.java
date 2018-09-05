@@ -1,15 +1,12 @@
-package ar.edu.iua.ingweb3;
+package ar.edu.iua.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
 @SpringBootApplication
-//con la anotacion anterior levantamos un TomCat
-public class Ingweb3Application {
+public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Ingweb3Application.class, args);
-		
+		SpringApplication.run(DemoApplication.class, args);
 	}
 }

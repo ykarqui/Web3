@@ -1,0 +1,100 @@
+{
+  "info": {
+    "_postman_id": "efe8b36a-0f1f-4688-a517-8a534ed94d19",
+    "name": "Localhost",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "c2085f22-efb7-4657-b066-3db5c486ba8f",
+      "name": "Crear un Producto",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "9ac98c76-bd7e-484f-bb01-19512614c0f6",
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Successful POST request\", function () {",
+              "    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+              "});",
+              "",
+              "let loc = postman.getResponseHeader(\"location\");",
+              "",
+              "pm.environment.set(\"Localizaci\u00f3n\", loc);",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"descripcion\": \"Quilmes Cl\u00e1sica\",\n\t\"precio\": 75,\n\t\"enStock\": true,\n\t\"vencimiento\": \"2020-09-29T18:05:36.886+0000\",\n\t\"rubro\": null\n}"
+        },
+        "url": "localhost:8080//api/v1/productos"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "c04db027-1a28-4452-bb8b-0de9711f4bf9",
+      "name": "Modificar un Producto",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "ada70321-fb7a-4989-8a50-7bbd53295bb1",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"descripcion\": \"Quilmes Cristal\",\n    \"precio\": 75,\n    \"enStock\": true,\n    \"vencimiento\": \"2020-09-29T18:05:36.886+0000\",\n    \"rubro\": null\n}"
+        },
+        "url": "localhost:8080//api/v1{{Localizaci\u00f3n}}"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "6a4fa9d5-480f-4867-b79b-db71b29dc6b8",
+      "name": "Obtener Producto",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": "localhost:8080//api/v1{{Localizaci\u00f3n}}"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "d09280e7-2ca9-42f2-a198-90a5a79ebf34",
+      "name": "Eliminar un Producto",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {},
+        "url": "localhost:8080//api/v1{{Localizaci\u00f3n}}"
+      },
+      "response": []
+    }
+  ]
+}
